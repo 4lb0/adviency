@@ -1,10 +1,73 @@
-.App {
-  font-family: sans-serif;
+/* Estilos generados con ChatGPT */
+/* https://chat.openai.com/share/56abbafc-0157-4b02-a147-cb618fc38772 */
+
+@import url('https://fonts.googleapis.com/css2?family=Mountains+of+Christmas&display=swap');
+
+body {
+  font-family: 'Mountains of Christmas', cursive;
+  background-color: #006400; /* Darker Green */
+  color: #fffacd; /* Lemon Chiffon for better readability */
+  margin: 0;
+  padding: 20px;
   text-align: center;
 }
 
-* {
-  box-sizing: border-box;
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #ffd700; /* Muted Gold */
+  text-shadow: 1px 1px #ff6347; /* Tomato */
+}
+
+ul {
+  list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+ul li {
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 35px;
+  font-size: 1.2em; /* Increased font size for desktop */
+}
+
+ul li::before {
+  content: '🎄';
+  position: absolute;
+  left: 0;
+}
+
+form {
+  margin-top: 20px;
+}
+
+input[type="text"], button {
+  border: 2px solid #ffd700; /* Gold border */
+  border-radius: 5px;
+  padding: 10px;
+  width: 80%;
+  max-width: 300px;
+}
+
+button {
+  background-color: #ffd700; /* Gold */
+  color: #006400; /* Dark Green */
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #ff8c00; /* Dark Orange */
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 4em;
+  }
+
+  ul li {
+    font-size: 1.5em; /* Larger font size for mobile */
+  }
 }
