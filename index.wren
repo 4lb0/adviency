@@ -36,6 +36,9 @@ Response.out("
         </li>
       " } )
     </ul>
+    <form method='post' action='limpiar'>
+      <button>Borrar todo</button>
+    </form>
   </div>
 
 </body>
