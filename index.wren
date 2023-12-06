@@ -1,6 +1,10 @@
-import "bialet" for Response
+import "bialet" for Request, Response, Db
 
-var regalos = ["Medias", "Caramelos", "Vitel Toné"]
+if (Request.isPost()) {
+  Db.save("regalos", {"nombre": Request.post("regalo")})
+}
+
+var regalos = Db.all("SELECT * FROM regalos")
 
 Response.out("
 
@@ -15,9 +19,18 @@ Response.out("
 
   <h1>Regalos:</h1>
 
-  <ul>
-    %( regalos.map{| regalo | "<li>%( regalo )</li>" } )
-  </ul>
+  <div class='form-container'>
+    <form method='post'>
+      <input type='text' name='regalo' />
+      <button>Agregar</button>
+    </form>
+  </div>
+
+  <div class='list-container'>
+    <ul>
+      %( regalos.map{| regalo | "<li>%( regalo["nombre"] )</li>" } )
+    </ul>
+  </div>
 
 </body>
 </html>

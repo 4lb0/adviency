@@ -39,10 +39,6 @@ ul li::before {
   left: 0;
 }
 
-form {
-  margin-top: 20px;
-}
-
 input[type="text"], button {
   border: 2px solid #ffd700; /* Gold border */
   border-radius: 5px;
@@ -70,4 +66,21 @@ button:hover {
   ul li {
     font-size: 1.5em; /* Larger font size for mobile */
   }
+}
+
+.form-container {
+  margin-bottom: 50px; /* Adds more space below the form */
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.6); /* Darker semi-transparent background */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: #fffacd; /* Lemon Chiffon for text */
+}
+
+.list-container {
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.6); /* Darker semi-transparent background */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: #fffacd; /* Lemon Chiffon for text */
 }
