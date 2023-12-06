@@ -84,3 +84,24 @@ button:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   color: #fffacd; /* Lemon Chiffon for text */
 }
+
+.eliminar {
+  display: inline-block;
+  width: 25px; /* Adjust as needed */
+  height: 25px; /* Adjust as needed */
+  background-color: #ff6347; /* Tomato color for the button */
+  color: white;
+  text-align: center;
+  line-height: 25px; /* Aligns the cross vertically */
+  border-radius: 50%; /* Makes it circular */
+  font-size: 20px; /* Adjust as needed */
+  text-decoration: none;
+  text-indent: -9999px; /* Hides the text off-screen */
+  overflow: hidden; /* Ensures the text doesn't show */
+}
+
+.eliminar::before {
+  content: '✖'; /* Cross symbol */
+  text-indent: 0; /* Resets text indent for the symbol */
+  display: block;
+}

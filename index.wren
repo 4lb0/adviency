@@ -28,7 +28,13 @@ Response.out("
 
   <div class='list-container'>
     <ul>
-      %( regalos.map{| regalo | "<li>%( regalo["nombre"] )</li>" } )
+      %( regalos.map{| regalo | "
+        <li>
+          %( regalo["nombre"] )
+          <!-- Esto no deberia ser un link! Ver vulnerabilidades de CSRF -->
+          <a href='eliminar?regalo=%( regalo["id"] )' class='eliminar'>Eliminar</a>
+        </li>
+      " } )
     </ul>
   </div>
 
