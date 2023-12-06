@@ -27,18 +27,24 @@ Response.out("
   </div>
 
   <div class='list-container'>
-    <ul>
-      %( regalos.map{| regalo | "
-        <li>
-          %( regalo["nombre"] )
-          <!-- Esto no deberia ser un link! Ver vulnerabilidades de CSRF -->
-          <a href='eliminar?regalo=%( regalo["id"] )' class='eliminar'>Eliminar</a>
-        </li>
-      " } )
+      %(
+        regalos.count > 0 ?
+          "<ul>
+            %( regalos.map{| regalo | "
+              <li>
+                %( regalo["nombre"] )
+                <!-- Esto no deberia ser un link! Ver vulnerabilidades de CSRF -->
+                <a href='eliminar?regalo=%( regalo["id"] )' class='eliminar'>Eliminar</a>
+              </li>
+            " })
+           </ul>
+          <form method='post' action='limpiar'>
+            <button>Borrar todo</button>
+          </form>
+           " :
+          "No hay regalos, agrega alguno, no seas boton!"
+      )
     </ul>
-    <form method='post' action='limpiar'>
-      <button>Borrar todo</button>
-    </form>
   </div>
 
 </body>
