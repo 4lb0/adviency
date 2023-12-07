@@ -1,10 +1,15 @@
 import "bialet" for Request, Response, Db
 
-if (Request.isPost()) {
-  Db.save("regalos", {"nombre": Request.post("regalo")})
-}
-
 var regalos = Db.all("SELECT * FROM regalos")
+
+if (Request.isPost()) {
+  var nombre = Request.post("regalo").trim()
+  var yaExiste = regalos.any{|regalo| regalo["nombre"] == nombre}
+  if (nombre != "" && !yaExiste) {
+    Db.save("regalos", {"nombre": nombre})
+    Response.redirect("/")
+  }
+}
 
 Response.out("
 
